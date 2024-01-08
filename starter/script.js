@@ -38,22 +38,40 @@ calendarTime.forEach(function(time) {
 
 //save the event in local sotrage when the save button is clicked; uniquely identify each time block so that the corresponding event data is correctly associated with it
 
+var saveBtns = document.querySelectorAll(".btn");
+
+// Add a click event listener to each button
 saveBtns.forEach(function(btn) {
   btn.addEventListener("click", function() {
-    // Assuming the ID of the button is in the format 'save-XX'
-    var hour = this.id.split('-')[1];
-    
-    // Now get the input field corresponding to this hour
-    var inputElement = document.getElementById(hour);
-    
-    if (inputElement) {
-      var userInput = inputElement.value;
-      localStorage.setItem("eventDetail-" + hour, userInput);
-      console.log("Saved event for " + hour + ": " + userInput);
-    } else {
-      console.error("No input element found for hour: " + hour);
-    }
+    var hour = parseInt(this.id.split('-')[1], 10);
+    console.log("Button hour:", hour);
+    var inputEl = document.getElementById(hour)
+    var userInput = inputEl.value; // Get the user input
+
+
+    localStorage.setItem("eventDetail" + hour, userInput);
+    console.log("Saved event for " + hour + ": " + userInput);
   });
 });
 
 //Persist events between refreshes of a page
+
+function loadEvents() {
+  var calendarTime = [9, 10, 11, 12, 13, 14, 15, 16, 17]; // Array of your time blocks
+
+  calendarTime.forEach(function(hour) {
+    // Retrieve the saved event from local storage
+    var savedEvent = localStorage.getItem("eventDetail-" + hour);
+
+    // If there is a saved event, populate the corresponding input field
+    if (savedEvent) {
+      var inputEl = document.getElementById(hour);
+      if (inputEl) {
+        inputEl.value = savedEvent;
+      }
+    }
+  });
+}
+
+// Attach the loadEvents function to the DOMContentLoaded event
+document.addEventListener('DOMContentLoaded', loadEvents);

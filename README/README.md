@@ -22,4 +22,4 @@ Create a simple calendar application that allows a user to save events for each 
 ![screencapture-file-C-bootcamp-Challenges-Work-Day-Scheduler-starter-index-html-2024-01-09-16_03_34](https://github.com/leeathena/Work-Day-Scheduler/assets/149600986/4d7aea5e-c375-404b-bf15-44d3e7a41f5b)
 
 ## Application URL
-
+https://leeathena.github.io/Work-Day-Scheduler/

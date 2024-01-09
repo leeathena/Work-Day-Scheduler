@@ -16,13 +16,13 @@ $(document).ready(function() {
       console.log(`Comparing: currentHour (${currentHour}) > time (${time})`);
 
       // Check and apply color coding and block input
-      if (currentHour > time) {
-          $inputElement.addClass('past').prop('disabled', true);
-      } else if (currentHour === time) {
-          $inputElement.addClass('present').prop('disabled', true);
-      } else {
-          $inputElement.addClass('future').prop('disabled', false);
-      }
+      if (currentHour < time) {
+        $inputElement.addClass('future').prop('disabled', false);
+    } else if (currentHour === time) {
+        $inputElement.addClass('present').prop('disabled', true);
+    } else {
+        $inputElement.addClass('past').prop('disabled', true);
+    }
   });
 
   // Save the event in local storage when the save button is clicked

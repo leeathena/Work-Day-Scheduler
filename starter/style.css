@@ -71,15 +71,3 @@ header {
   transition: all 0.3s ease-in-out;
 }
 
-.red-box {
-  background-color: red;
-}
-
-.green-box {
-  background-color: rgb(176, 212, 176);
-}
-
-.grey-box {
-  background-color: grey;
-}
-

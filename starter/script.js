@@ -15,13 +15,14 @@ $(document).ready(function() {
       let $inputElement = $("#" + time);
       console.log(`Comparing: currentHour (${currentHour}) > time (${time})`);
 
+
       // Check and apply color coding and block input
       if (currentHour < time) {
-        $inputElement.addClass('future').prop('disabled', false);
+        $inputElement.css('background-color', 'green').prop('disabled', false);
     } else if (currentHour === time) {
-        $inputElement.addClass('present').prop('disabled', true);
+        $inputElement.css('background-color', 'red').prop('disabled', true);
     } else {
-        $inputElement.addClass('past').prop('disabled', true);
+        $inputElement.css('background-color', 'grey').prop('disabled', true);
     }
   });
 

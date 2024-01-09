@@ -76,9 +76,8 @@ header {
 }
 
 .green-box {
-  background-color: green;
+  background-color: rgb(176, 212, 176);
 }
-
 
 .grey-box {
   background-color: grey;
